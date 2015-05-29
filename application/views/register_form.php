@@ -2,9 +2,13 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 <div id='main'>
-	<?php echo form_open('register');?>
+<?php
+echo validation_errors();
+?>
+	<?php echo form_open('user/register');?>
 		<ul id='registerForm'>
 			<li><label for='username'>Gebruikersnaam:</label><input type='text' name='username' /></li>
+			<li><label for='password'>Wachtwoord</label><input type='password' name='password' /></li>
 			<li><label for='realName'>Voor- en achternaam:</label><input type='text' name='realName' /></li>
 			<li><label for='birthDay'>Geboortedatum:</label><input type='date' name='birthDay' /></li>
 			<li>

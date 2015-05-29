@@ -16,3 +16,4 @@ foreach ($cssFiles as $cssFile) {
 		<div id='header'>
 			<h1>DataDate</h1>
 		</div>
+		<div id='main'>

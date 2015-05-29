@@ -23,7 +23,8 @@ class User extends CI_Model {
 
 	public function register_user($data)
 	{
-		echo $this->input->get('email');
+		
+		// echo $this->input->get('email');
 	}
 }
 ?>
