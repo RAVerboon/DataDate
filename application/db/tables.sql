@@ -39,7 +39,7 @@ CREATE TABLE chat (
 	user_one		TEXT		NOT NULL,
 	user_two		TEXT		NOT NULL,
 	message			TEXT		NOT NULL,
-	time			TEXT		NOT NULL,
+	time			DATETIME	NOT NULL,
 	FOREIGN KEY (user_one) REFERENCES users(username),
 	FOREIGN KEY (user_two) REFERENCES users(username)
 );
