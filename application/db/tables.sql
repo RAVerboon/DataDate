@@ -21,3 +21,24 @@ CREATE TABLE likes (
 	FOREIGN KEY (likes_two) REFERENCES users(username)
 );
 
+CREATE TABLE brands (
+	id				INTEGER 	NOT NULL,
+	name 			TEXT		NOT NULL,
+	PRIMARY KEY (id)
+);
+
+CREATE TABLE user_brands (
+	id				INTEGER		NOT NULL,
+	username		TEXT		NOT NULL,
+	FOREIGN KEY (id) REFERENCES brands(id),
+	FOREIGN KEY (username) REFERENCES users(username)
+)
+
+CREATE TABLE chat (
+	user_one		TEXT		NOT NULL,
+	user_two		TEXT		NOT NULL,
+	message			TEXT		NOT NULL,
+	time			TEXT		NOT NULL,
+	FOREIGN KEY (user_one) REFERENCES users(username),
+	FOREIGN KEY (user_two) REFERENCES users(username)
+)
