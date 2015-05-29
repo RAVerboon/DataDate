@@ -11,6 +11,7 @@ CREATE TABLE users (
 	description		TEXT		NOT NULL,
 	personality		TEXT		NOT NULL,
 	pref_pers		TEXT		NOT NULL,
+	is_admin		INTEGER 	NOT NULL,
 	PRIMARY KEY (username)
 );
 
@@ -32,7 +33,7 @@ CREATE TABLE user_brands (
 	username		TEXT		NOT NULL,
 	FOREIGN KEY (id) REFERENCES brands(id),
 	FOREIGN KEY (username) REFERENCES users(username)
-)
+);
 
 CREATE TABLE chat (
 	user_one		TEXT		NOT NULL,
@@ -41,4 +42,10 @@ CREATE TABLE chat (
 	time			TEXT		NOT NULL,
 	FOREIGN KEY (user_one) REFERENCES users(username),
 	FOREIGN KEY (user_two) REFERENCES users(username)
-)
+);
+
+CREATE TABLE settings (
+	lifestyled		TEXT		NOT NULL,
+	xfactor			REAL 		NOT NULL,
+	alpha			REAL 		NOT NULL
+);
