@@ -3,7 +3,7 @@ CREATE TABLE users (
 	password		TEXT		NOT NULL,
 	real_name		TEXT		NOT NULL,
 	email			TEXT		NOT NULL,
-	birthday		TEXT		NOT NULL,
+	birthday		DATE		NOT NULL,
 	gender			INTEGER		NOT NULL,
 	other_gender	INTEGER		NOT NULL,
 	min_age			INTEGER 	NOT NULL,
@@ -23,14 +23,14 @@ CREATE TABLE likes (
 );
 
 CREATE TABLE brands (
-	id				INTEGER 	NOT NULL,
-	name 			TEXT		NOT NULL,
+	id			INTEGER 	NOT NULL,
+	name 		TEXT		NOT NULL,
 	PRIMARY KEY (id)
 );
 
 CREATE TABLE user_brands (
-	id				INTEGER		NOT NULL,
-	username		TEXT		NOT NULL,
+	id			INTEGER		NOT NULL,
+	username	TEXT		NOT NULL,
 	FOREIGN KEY (id) REFERENCES brands(id),
 	FOREIGN KEY (username) REFERENCES users(username)
 );
